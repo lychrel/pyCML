@@ -46,8 +46,9 @@ class LogisticLattice:
             It doesn't work / produce the desired functionality
         """
         # Doesn't this repeat the first value?
-        middle_values = np.array([self.neighbor_coupled_update(left, center, right)
-                                  for left,center,right in zip(lat, lat[1::], lat[2::])])
+        #middle_values = np.array([self.neighbor_coupled_update(left, center, right)
+                                  #for left,center,right in zip(lat, lat[1::], lat[2::])])
+        middle_values = self.neighbor_coupled_update(lat[:-2], lat[1:-1], lat[2:])
         # Left end + middle + right end
         lat = np.insert(middle_values, 0, left_end, axis=0)
         lat = np.insert(lat, len(lat) - 1, right_end, axis=0)
