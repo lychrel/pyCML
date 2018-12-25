@@ -18,15 +18,18 @@ class LogisticLattice:
     def logistic(self, prev):
         return self.alpha * prev * (1.0 - prev)
 
+    def kaneko_l(self, prev):
+        return 1.0 - self.alpha * (prev ** 2)
+
     # general "next state" function
     def next_state(self, prev):
         #vec_logistic = np.vectorize(self.logistic)
         #return vec_logistic(prev)
-        return self.logistic(prev)
+        return self.kaneko_l(prev)
 
     # update a lattice boundary
     def boundary_update(self, end):
-        return self.logistic(end)
+        return self.next_state(end)
 
     # two-neighbor coupling
     def neighbor_coupled_update(self, L, C, R):
@@ -42,7 +45,9 @@ class LogisticLattice:
         """ BUG: test this on a simpler np array.
             It doesn't work / produce the desired functionality
         """
-        middle_values = self.neighbor_coupled_update(lat[:-2], lat[1:-1], lat[2:])
+        # Doesn't this repeat the first value?
+        middle_values = np.array([self.neighbor_coupled_update(left, center, right)
+                                  for left,center,right in zip(lat, lat[1::], lat[2::])])
         # Left end + middle + right end
         lat = np.insert(middle_values, 0, left_end, axis=0)
         lat = np.insert(lat, len(lat) - 1, right_end, axis=0)
@@ -53,9 +58,7 @@ class LogisticLattice:
     def get_lattice(self):
         return self.lattice
 
-"""
 lat = LogisticLattice(10, 0.4, 1.71)
 for i in range(20):
     print(lat.update())
     print("\n")
-"""
