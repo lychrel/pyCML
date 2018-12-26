@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from logistic import LogisticLattice
 from progressbar import ProgressBar
 
 """
@@ -42,10 +41,9 @@ class Evolution:
         plt.colorbar(orientation='vertical')
         plt.show()
 
-
 """
-lat = LogisticLattice(10, 0.5, 1.67)
-ev = Evolution(lat)
+cml = CML(dim=100, coupling=TwoNeighbor(strength=0.2, map_obj=KanekoLogistic(alpha=1.47)))
 
-ev.plot_time_evolution(4)
+ev = Evolution(cml)
+ev.plot_time_evolution(10)
 """
