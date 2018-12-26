@@ -14,10 +14,11 @@ class LogisticLattice:
         self.dim = dim
         self.alpha = alpha
 
-    # logistic map
+    # logistic map (classical)
     def logistic(self, prev):
         return self.alpha * prev * (1.0 - prev)
 
+    # +/- 1 logistic map (canonical for CMLs)
     def kaneko_l(self, prev):
         return 1.0 - self.alpha * (prev ** 2)
 
@@ -31,12 +32,12 @@ class LogisticLattice:
     def boundary_update(self, end):
         return self.next_state(end)
 
-    # two-neighbor coupling
+    # update the lattice interior (two-neighbor)
     def neighbor_coupled_update(self, L, C, R):
         return (1.0 - self.coupling) * self.next_state(C) + (self.coupling/2.0) * (self.next_state(L) + self.next_state(R))
 
     # update lattice values
-    def update(self):
+    def two_neighbor_coupling(self):
         lat = self.lattice
         # End values don't have two neighbors
         left_end = self.boundary_update(lat[0])
@@ -46,8 +47,6 @@ class LogisticLattice:
             It doesn't work / produce the desired functionality
         """
         # Doesn't this repeat the first value?
-        #middle_values = np.array([self.neighbor_coupled_update(left, center, right)
-                                  #for left,center,right in zip(lat, lat[1::], lat[2::])])
         middle_values = self.neighbor_coupled_update(lat[:-2], lat[1:-1], lat[2:])
         # Left end + middle + right end
         lat = np.insert(middle_values, 0, left_end, axis=0)
@@ -55,11 +54,20 @@ class LogisticLattice:
         self.lattice = lat
         return lat
 
+    # general "coupling scheme" function
+    def coupling_scheme(self):
+        return self.two_neighbor_coupling()
+
+    def update(self):
+        return self.coupling_scheme()
+
     # retrieve lattice values
     def get_lattice(self):
         return self.lattice
 
+"""
 lat = LogisticLattice(10, 0.4, 1.71)
 for i in range(20):
     print(lat.update())
     print("\n")
+"""
