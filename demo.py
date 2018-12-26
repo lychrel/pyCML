@@ -1,9 +1,3 @@
-from logistic import LogisticLattice
-import numpy as np
-from array2gif import write_gif
-import matplotlib.pyplot as plt
-from progressbar import ProgressBar
-
 from cml import CML
 from maps import KanekoLogistic
 from couplings import TwoNeighbor
