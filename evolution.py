@@ -26,6 +26,12 @@ class Evolution:
                 data = np.vstack((data, new_data))
             bar.update(i)
 
+        """
+        for nice blurring
+        from scipy.ndimage.filters import gaussian_filter
+        data = gaussian_filter(data, sigma=7)
+        """
+
         fig = plt.figure(figsize=(6, 3.2))
         ax = fig.add_subplot(111)
         ax.set_title('Lattice Evolution')
