@@ -3,9 +3,9 @@ from maps import KanekoLogistic
 from couplings import TwoNeighbor
 from evolution import Evolution
 
-cml = CML(dim=100,
-          coupling=TwoNeighbor(strength=0.2,
-                               map_obj=KanekoLogistic(alpha=1.47)))
+cml = CML(dim=1000,
+          coupling=TwoNeighbor(strength=0.00115,
+                               map_obj=KanekoLogistic(alpha=1.7522)))
 
 ev = Evolution(cml)
-ev.plot_time_evolution(10)
+ev.plot_time_evolution(12000, 12)

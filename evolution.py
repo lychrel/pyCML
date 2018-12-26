@@ -13,6 +13,7 @@ class Evolution:
 
     def __init__(self, cml, colormap='plasma'):
         self.cml = cml
+        self.colormap = colormap
 
     def plot_time_evolution(self, iterations, modulus=1):
 
@@ -28,7 +29,7 @@ class Evolution:
         fig = plt.figure(figsize=(6, 3.2))
         ax = fig.add_subplot(111)
         ax.set_title('Lattice Evolution')
-        plt.imshow(data)
+        plt.imshow(data, cmap=self.colormap)
         ax.set_aspect('equal')
         # we want the lattice "evolving upward"
         plt.gca().invert_yaxis()
