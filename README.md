@@ -1,5 +1,4 @@
-<a href="https://ibb.co/94x8vX9"><img src="https://i.ibb.co/bv4W3hg/Screen-Shot-2018-12-25-at-11-16-45-PM.png" alt="Screen-Shot-2018-12-25-at-11-16-45-PM" border="0" width="100%"></a>
-# pyCML
+<a href="https://ibb.co/3mt47zg"><img src="https://i.ibb.co/pjCbxyY/pyCML3.png" alt="pyCML3" border="0" width="100%"></a>
 
 Python functions for simulating and visualizing Coupled Map Lattices.
 
