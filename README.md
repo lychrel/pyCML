@@ -1,4 +1,4 @@
-<a href="https://ibb.co/CHX1RSQ"><img src="https://i.ibb.co/sVDm8Xq/croppo.png" alt="croppo" border="0"></a>
+<a href="https://ibb.co/CHX1RSQ"><img src="https://i.ibb.co/sVDm8Xq/croppo.png" alt="croppo" border="0" width="100%"></a>
 # pyCML
 
 Python functions for simulating and visualizing Coupled Map Lattices.
