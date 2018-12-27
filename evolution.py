@@ -15,7 +15,7 @@ class Evolution:
         self.cml = cml
         self.colormap = colormap
 
-    def plot_time_evolution(self, iterations, modulus=1):
+    def plot_time_evolution(self, iterations, modulus=1, save_figure=False, save_data=False):
 
         # generate evolution data
         data = np.array(self.cml.get_lattice())
@@ -32,6 +32,9 @@ class Evolution:
         data = gaussian_filter(data, sigma=7)
         """
 
+        if save_data:
+            np.save("time_evolution.npy", data)
+
         fig = plt.figure(figsize=(6, 3.2))
         ax = fig.add_subplot(111)
         ax.set_title('Lattice Evolution')
@@ -46,7 +49,12 @@ class Evolution:
         cax.patch.set_alpha(0)
         cax.set_frame_on(False)
         plt.colorbar(orientation='vertical')
+
+        if save_figure:
+            plt.savefig("time_evolution.png")
+
         plt.show()
+
 
 """
 cml = CML(dim=100, coupling=TwoNeighbor(strength=0.2, map_obj=KanekoLogistic(alpha=1.47)))
