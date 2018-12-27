@@ -15,7 +15,7 @@ class Evolution:
         self.cml = cml
         self.colormap = colormap
 
-    def plot_time_evolution(self, iterations, modulus=1, save_figure=False, save_data=False):
+    def time_evolution(self, iterations, modulus=1, save_figure=False, save_data=False, show_figure=True):
 
         # generate evolution data
         data = np.array(self.cml.get_lattice())
@@ -53,7 +53,8 @@ class Evolution:
         if save_figure:
             plt.savefig("time_evolution.png")
 
-        plt.show()
+        if show_figure:
+            plt.show()
 
 
 """

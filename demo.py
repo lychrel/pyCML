@@ -8,4 +8,4 @@ cml = CML(dim=1000,
                                map_obj=KanekoLogistic(alpha=1.7522)))
 
 ev = Evolution(cml)
-ev.plot_time_evolution(12000, 12, True, True)
+ev.time_evolution(12000, 12, True, True, True)
