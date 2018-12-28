@@ -1,6 +1,6 @@
 @img[clip-img bg-black clean-img span-30](img/alpha_evolution.gif)
 # @color[#f95e64](pyCML)
-@color[#f95e64](For rapid construction and simulation of CMLs)
+For rapid construction and simulation of CMLs
 ---
 ## Getting Started
 1. Coupling scheme
