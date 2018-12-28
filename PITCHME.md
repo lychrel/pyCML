@@ -1,4 +1,4 @@
----?image=img/alpha_evolution.gif&size=50%
+@img[clip-img bg-black clean-img span-80](img/alpha_evolution.gif)
 # @color[#f95e64](pyCML)
 @color[#f95e64](For rapid construction and simulation of CMLs)
 ---
