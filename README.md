@@ -3,11 +3,11 @@
 
 Python functions for rapid construction, simulation, analysis, and visualization of Coupled Map Lattices (CMLs).
 
-### Tutorial
+## Tutorial
 
 Check the [GitPitch](https://gitpitch.com/lychrel/pycml/master#/).
 
-### Usage
+## Usage
 1. Write your own coupling scheme (or use one of the existing options) in [couplings.py](couplings.py)
 2. Write your own map function (or use one of the existing options) in [maps.py](maps.py)
 3. Create your CML using the CML class.
