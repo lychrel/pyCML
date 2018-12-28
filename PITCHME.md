@@ -1,3 +1,4 @@
+---?image=img/alpha_evolution.gif
 # pyCML
 For rapid construction and simulation of CMLs
 ---
