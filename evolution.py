@@ -94,6 +94,8 @@ class Evolution:
         if save_data:
             np.save("alpha_evolution.npy", np.array(data_array))
 
+        return np.array(data_array)
+
 
 
 
