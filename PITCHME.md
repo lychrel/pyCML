@@ -19,7 +19,7 @@ This may require sub-functions. For example,
 `\[
 x_{n+1}(i) = (1 - \epsilon)f(x_{n}(i)) + \frac{\epsilon}{2}(f(x_{n}(i + 1)) + f(x_{n}(i - 1)))
 \]`
-+++?code=couplings.py&title=Two-Neighbor
++++?code=couplings.py&title=Implementation
 @[7](Classic two-neighbor coupling scheme)
 @[8-10](Requires a coupling strength and a Map object)
 @[11]((Which determines the map function used))
@@ -37,7 +37,7 @@ and parameter(s) `alpha`
 `\[
 f(x) = 1 - \alpha x^{2}
 \]`
-+++?code=maps.py&title=Kaneko
++++?code=maps.py&title=Implementation
 @[5-11](General Map class)
 @[8-11](Bifurcation Parameter getter/setters)
 @[19-23](Kaneko logistic map class)
