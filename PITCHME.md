@@ -12,7 +12,7 @@ Each coupling scheme requires a `couple()` function:
 - input: the lattice in its previous state
 - output: the lattice in its updated state
 This may require sub-functions. For example,
-+++?code=couplings.py$title=Two-Neighbor
++++?code=couplings.py&title=Two-Neighbor
 @[7](Classic two-neighbor coupling scheme)
 @[8-10](Requires a coupling strength and a Map object)
 @[11]((Which determines the map function used))
