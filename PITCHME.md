@@ -12,9 +12,7 @@ Each coupling scheme requires a `couple()` function:
 - input: the lattice in its previous state
 - output: the lattice in its updated state
 This may require sub-functions. For example,
-+++
-### Two-Neighbor Coupling
-?code=couplings.py
++++?code=couplings.py$title=Two-Neighbor
 @[7](Classic two-neighbor coupling scheme)
 @[8-10](Requires a coupling strength and a Map object)
 @[11]((Which determines the map function used))
@@ -32,8 +30,7 @@ and parameter(s) `alpha`
 `\[
 f(x) = 1 - \alpha x^{2}
 \]`
-+++
-?code=maps.py
++++?code=maps.py&title=Kaneko
 @[5-11](General Map class)
 @[8-11](Bifurcation Parameter getter/setters)
 @[19-23](Kaneko logistic map class)
