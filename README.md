@@ -1,7 +1,11 @@
 <a href="https://ibb.co/4s80KBQ"><img src="https://i.ibb.co/k34P5Yd/blur-edges.jpg" alt="blur-edges" border="0" width="100%"></a>
 # pyCML
 
-Python functions for simulating and visualizing Coupled Map Lattices.
+Python functions for rapid construction, simulation, analysis, and visualization of Coupled Map Lattices (CMLs).
+
+### Tutorial
+
+Check the [GitPitch](https://gitpitch.com/lychrel/pycml/master#/).
 
 ### Usage
 1. Write your own coupling scheme (or use one of the existing options) in [couplings.py](couplings.py)
