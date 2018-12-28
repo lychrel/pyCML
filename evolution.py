@@ -3,6 +3,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from progressbar import ProgressBar
+from array2gif import write_gif
 
 """
 Coupled Map Lattice Evolution plotting functionality
@@ -55,6 +56,46 @@ class Evolution:
 
         if show_figure:
             plt.show()
+
+        return data
+
+    def alpha_evolution(self, steps=100, time_iterations=100, max=2.0, min=1.5, save_figure=True, save_data=False):
+
+        # First, generate all data
+        data_array = []
+        rgb_data_array = []
+        for index, al in enumerate(np.linspace(min, max, steps)):
+            print("Evolution {} out of {}...".format(index, steps))
+            # Update CML's alpha value
+            self.cml.coupling.map_obj.set_alpha(al)
+            data = self.time_evolution(time_iterations, 1, False, False, False)
+
+            # For now: artificial RGB for array2gif
+            g_to_rgb = lambda x: [x, x, x]
+
+            rgb_data = []
+            for row in data:
+                rgb_row = []
+                for val in row:
+                    rgb_row.append(g_to_rgb(val))
+                rgb_data.append(rgb_row)
+
+            rgb_data = np.array(rgb_data)
+
+            rgb_data = (rgb_data + 1.0) * 255.0 / 2.0
+            rgb_data = rgb_data.astype(int)
+
+            data_array.append(data)
+            rgb_data_array.append(rgb_data)
+
+        if save_figure:
+            write_gif(rgb_data_array, "alpha_evolution.gif", fps=10)
+
+        if save_data:
+            np.save("alpha_evolution.npy", np.array(data_array))
+
+
+
 
 
 """

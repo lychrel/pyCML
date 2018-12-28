@@ -21,6 +21,7 @@ class CML:
     def get_lattice(self):
         return self.lattice
 
+
 """
 lat = LogisticLattice(10, 0.4, 1.71)
 for i in range(20):
