@@ -14,7 +14,7 @@ Each coupling scheme requires a `couple()` function:
 This may require sub-functions. For example,
 +++
 ### Two-Neighbor Coupling
----?code=couplings.py
+?code=couplings.py
 @[7](Classic two-neighbor coupling scheme)
 @[8-10](Requires a coupling strength and a Map object)
 @[11]((Which determines the map function used))
@@ -33,7 +33,7 @@ and parameter(s) `alpha`
 f(x) = 1 - \alpha x^{2}
 \]`
 +++
----?code=maps.py
+?code=maps.py
 @[5-11](General Map class)
 @[8-11](Bifurcation Parameter getter/setters)
 @[19-23](Kaneko logistic map class)
