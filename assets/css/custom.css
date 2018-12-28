@@ -1,0 +1,4 @@
+.reveal img.clip-img {
+  clip-path: circle(30% at 50% 50%);
+    -webkit-clip-path: circle(30% at 50% 50%);
+}
